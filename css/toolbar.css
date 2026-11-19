@@ -1,0 +1,221 @@
+.nav-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-controls, .toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.omnibox-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 0 8px;
+  gap: 8px;
+  position: relative;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.omnibox-wrapper:focus-within {
+  border-color: var(--highlight);
+  box-shadow: 0 0 0 2px rgba(181, 139, 208, 0.25);
+}
+
+.omnibox-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--highlight);
+  cursor: pointer;
+  padding: 2px;
+}
+
+.omnibox-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.engine-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--highlight);
+  background-color: var(--bg-tertiary);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+#omnibox-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  min-width: 120px;
+}
+
+#omnibox-input::placeholder {
+  color: var(--text-muted);
+}
+
+.omnibox-action.bookmarked {
+  color: var(--highlight);
+}
+
+.omnibox-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  z-index: 500;
+  overflow: hidden;
+  animation: fadeDown 140ms ease-out;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.suggestion-item:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.suggestion-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.security-shield-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.security-shield-btn:hover {
+  background-color: var(--bg-elevated);
+}
+
+.security-shield-btn svg {
+  width: 15px;
+  height: 15px;
+  color: var(--highlight);
+}
+
+.bookmarks-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  overflow-x: auto;
+  min-height: 30px;
+}
+
+.bookmarks-bar.hidden {
+  display: none;
+}
+
+.bookmark-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.bookmark-chip:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.app-menu {
+  position: absolute;
+  top: 84px;
+  right: 12px;
+  width: 240px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  padding: 6px;
+  z-index: 600;
+  animation: fadeDown 140ms ease-out;
+}
+
+.app-menu hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 6px 0;
+}
+
+.menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menu-item:hover {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+.menu-item kbd {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  opacity: 0.75;
+}
